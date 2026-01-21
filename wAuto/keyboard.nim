@@ -548,7 +548,7 @@ proc keyProc(nCode: int32, wParam: WPARAM, lParam: LPARAM): LRESULT {.stdcall.} 
         if (GetAsyncKeyState(VK_SHIFT) and 0x8000) != 0: modifiers = modifiers or wModShift
         if (GetAsyncKeyState(VK_LWIN) and 0x8000) != 0 or (GetAsyncKeyState(VK_RWIN) and 0x8000) != 0:
           modifiers = modifiers or wModWin
-          hkData.lastModifiers = modifiers
+        hkData.lastModifiers = modifiers
 
       if keyCode != hkData.lastKeyCode:
         let hotkey = (modifiers, keyCode)
